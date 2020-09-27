@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Auto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -11,14 +12,14 @@ class AutosController extends Controller
 
     public function index()
     {
-        $autos = DB::table(self::TABLE)->get();
+        $autos = Auto::all();
 
         return response()->json($autos);
     }
 
     public function show($id)
     {
-        $auto = DB::table(self::TABLE)->where('idauto', '=', $id)->first(['*']);
+        $auto = Auto::query()->find($id);
 
         if (!$auto) {
             return response()->json([
