@@ -18,4 +18,9 @@ class Maker extends Model
     protected $hidden = ['password'];
 
     protected $dates = ['deleted_at'];
+
+    public function getPrimaryKey()
+    {
+        return $this->primaryKey;
+    }
 }

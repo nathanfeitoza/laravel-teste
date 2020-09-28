@@ -17,17 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::group(['prefix' => 'api'],
-//    function () {
-//        Route::get('/', function() {
-//            return response()->json(['message' => 'Factorys and autos API', 'status' => 'Connected']);
-//        });
-//
-//        Route::resource('makers', \App\Http\Controllers\MakersController::class);
-//        Route::resource('autos', \App\Http\Controllers\AutosController::class);
-//    }
-//);
-
 Route::get('/teste', function () {
     return view('new_index');
 });
